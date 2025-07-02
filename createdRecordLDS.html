@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Create Record Utility of LDS" icon-name="utility:lightning">
+
+        <lightning-input type="text" label="First Name" onchange={handleFirstNameChange}></lightning-input>
+        <lightning-input type="text" label="Last Name" onchange={handleLastNameChange}
+            required="true"></lightning-input>
+        <lightning-input type="text" label="Email" onchange={handleEmailChange}></lightning-input>
+        <lightning-input type="text" label="Company" onchange={handleCompanyChange} required="true"></lightning-input>
+
+        <div class="slds-p-around_medium">
+            <lightning-button label="Create Record" onclick={createLead}></lightning-button>
+        </div>
+        <template if:true={recordCreated}>
+            <p>✅ Lead created with ID: {leadId}</p>
+        </template>
+    </lightning-card>
+</template>
